@@ -1,0 +1,10 @@
+package AnyDo_WebTest;
+
+public class AnyDoWebTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

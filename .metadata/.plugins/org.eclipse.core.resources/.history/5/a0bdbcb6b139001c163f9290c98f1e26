@@ -1,0 +1,28 @@
+package AnyDo_WebTest;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class anyDoWebTestNG {
+	
+	static WebDriver driver = null;
+	
+	@Test
+	public static void setup() {
+		
+		WebDriverManager.chromedriver().setup();
+		
+		driver=new ChromeDriver();
+		
+		driver.get("https://desktop.any.do/");
+		
+		AnyDoWebObjects.continueWithEmail(driver).click();
+		
+		
+	}
+
+}

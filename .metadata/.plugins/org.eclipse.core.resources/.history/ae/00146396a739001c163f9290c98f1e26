@@ -1,0 +1,27 @@
+package AnyDo_WebTest;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class AnyDoWebTest {
+	
+			
+	public static void SetUp(){
+				
+		//ChromeWebdriver location setup using webdrivermanager
+				
+		WebDriverManager.chromedriver().setup();
+				
+		// chrome browser webdriver object
+				
+		WebDriver driver=new ChromeDriver();
+				
+		// url visit method
+		driver.get("https://www.youtube.com/");
+		
+	}
+	
+
+}

@@ -1,0 +1,22 @@
+package AnyDo_WebTest;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class anyDoWebTestNG {
+	
+	public static void setup(){
+		
+		WebDriverManager.chromedriver().setup();
+		
+		WebDriver driver=new ChromeDriver();
+		
+		driver.get("https://desktop.any.do/");
+		
+		driver.findElement(By.className("AppLoginButton AppLoginButton--email")).click();
+	}
+
+}

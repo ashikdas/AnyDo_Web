@@ -1,0 +1,27 @@
+package AnyDo_WebTest;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class AnyDoWebTest {
+	
+	public static void SetUp(){
+		
+		WebDriverManager.chromedriver().setup();
+						
+		WebDriver driver=new ChromeDriver();
+		
+	}
+	
+	public static void CreateTask(){
+		
+		// url visit method
+		driver.get("https://desktop.any.do/");
+		
+	}
+	
+	
+
+}

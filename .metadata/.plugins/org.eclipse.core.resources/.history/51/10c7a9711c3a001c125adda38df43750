@@ -1,0 +1,53 @@
+package AnyDo_WebTest;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class anyDoWebTestNG {
+	
+	static WebDriver driver = null;
+	
+//	@BeforeTest
+//	public static void print(){
+//		
+//		System.out.println("TestNG start");
+//	}
+//	
+	@Test
+	public static void setup() throws AWTException, InterruptedException {
+		
+		WebDriverManager.chromedriver().setup();
+		
+		driver=new ChromeDriver();
+		
+		driver.get("https://desktop.any.do/");
+		
+		AnyDoWebObjects.continueWithEmail(driver).click();
+		Thread.sleep(3000);
+		
+		AnyDoWebObjects.email(driver).sendKeys("ashik@gmail.com");
+		Thread.sleep(3000);
+		
+		Robot rb=new Robot();
+		
+		rb.keyPress(KeyEvent.VK_ENTER);
+		
+		Thread.sleep(3000);
+		
+		AnyDoWebObjects.password(driver).sendKeys("Ashik");
+		Thread.sleep(2000);
+		
+		rb.keyPress(KeyEvent.VK_ENTER);
+		
+		
+	}
+
+}
